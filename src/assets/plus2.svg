@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" x="230" y="442" width="440" height="8" rx="4" ry="4"/>
+  <rect id="Rounded_Rectangle_1_copy" data-name="Rounded Rectangle 1 copy" class="cls-1" x="446" y="226" width="8" height="440" rx="4" ry="4"/>
+</svg>

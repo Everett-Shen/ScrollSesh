@@ -8,8 +8,14 @@
       min="0"
       max="59"
     />
-    
-    : <span v-show="!showInput" @click="showInput = true" style="position: relative; top: 2px;  left: 7px">00</span>
+
+    :
+    <span
+      v-show="!showInput"
+      @click="showInput = true"
+      style="position: relative; top: 2px;  left: 7px"
+      >00</span
+    >
     <input
       v-show="showInput"
       type="number"
@@ -43,31 +49,31 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 input {
-    border: 0px;
-    text-align: end;
-    width: 70px;
-    height: 30px;
-    position: relative;
-    top: 2px;
-    
+  border: 0px;
+  text-align: end;
+  width: 70px;
+  height: 30px;
+  position: relative;
+  top: 2px;
+  background-color: transparent;
 }
 
 #min {
-    position: relative;
-    left: 8px;
+  position: relative;
+  left: 8px;
 }
 
 #sec {
-    text-align: start;
-    position: relative;
-    left: 5px;
-    width: 50px;
+  text-align: start;
+  position: relative;
+  left: 5px;
+  width: 50px;
 }
 
 input:focus {
-    outline: 0;
+  outline: 0;
+  background-color: transparent;
 }
-
 </style>

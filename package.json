@@ -11,6 +11,7 @@
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
+    "requirejs": "^2.3.6",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
   },
@@ -29,7 +30,6 @@
     "sass-loader": "^9.0.3",
     "vue-template-compiler": "^2.6.11"
   },
-
   "eslintConfig": {
     "root": false,
     "env": {
@@ -45,7 +45,6 @@
     },
     "rules": {}
   },
-  
   "browserslist": [
     "> 1%",
     "last 2 versions",

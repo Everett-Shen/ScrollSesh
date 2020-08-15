@@ -1,16 +1,20 @@
 /* eslint-disable prettier/prettier */
 <template>
-<div style="display: inline-block">
-  <timer-setup v-if="!time" @set-time="setTime" ref="timerSetup"></timer-setup>
-  <div v-else>
-    <timer :time="prettyTime"></timer>
-    <div>
-      <!-- <button v-if="!isRunning" @click="start">Start</button> -->
-      <!-- <button v-if="isRunning" @click="stop">Stop</button>
+  <div style="display: inline-block">
+    <timer-setup
+      v-if="!time"
+      @set-time="setTime"
+      ref="timerSetup"
+    ></timer-setup>
+    <div v-else>
+      <timer :time="prettyTime"></timer>
+      <div>
+        <!-- <button v-if="!isRunning" @click="start">Start</button> -->
+        <!-- <button v-if="isRunning" @click="stop">Stop</button>
       <button @click="reset">Reset</button> -->
+      </div>
     </div>
   </div>
-  </div>		
 </template>
 
 <script>
@@ -51,7 +55,7 @@ export default {
             this.time--;
           } else {
             clearInterval(this.timer);
-            this.sound.play();
+            this.$emit("timeUp");
             this.reset();
           }
         }, 1000);
@@ -69,15 +73,15 @@ export default {
       this.minutes = 0;
     },
     setTime(payload) {
-      this.time = payload.minutes * 60 + parseInt(payload.secondes)
+      this.time = payload.minutes * 60 + parseInt(payload.secondes);
     }
   }
 };
 </script>
 
 <style scoped>
-body{
-	font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 input[type="number"] {
   height: 30px;
@@ -102,6 +106,5 @@ label {
 
 .timer {
   font-size: 30px;
-
 }
 </style>
