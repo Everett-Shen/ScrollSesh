@@ -15,6 +15,7 @@ export default new Vuex.Store({
       for (let i = 0; i < state.windows.length; i++) {
         state.windows[i].close();
       }
+      state.windows = [];
     }
   },
   actions: {

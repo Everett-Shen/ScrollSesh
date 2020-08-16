@@ -1,6 +1,6 @@
 <template>
   <div id="app" :class="{ gradient: playing }">
-    <NavBar @toggleGradient="playing = !playing"></NavBar>
+    <NavBar></NavBar>
     <Main class="main"></Main>
   </div>
 </template>
@@ -8,6 +8,7 @@
 <script>
 import NavBar from "./components/NavBar.vue";
 import Main from "./components/Main";
+import Store from "./store/index"
 export default {
   name: "App",
   components: {
@@ -18,6 +19,17 @@ export default {
     return {
       playing: false
     };
+  },
+  computed: {
+    paneNumber() {
+      return Store.state.windows.length;
+    }
+  },
+  watch: {
+    paneNumber() {
+      if (this.paneNumber == 0) this.playing = false;
+      else this.playing = true;
+    }
   }
 };
 </script>

@@ -31,11 +31,25 @@ export default {
     fill(e) {
       if (e.target.value == "") e.target.value = "https://www.";
     },
+    offset(el) {
+      var rect = el.getBoundingClientRect();
+      // scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      // scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return {
+        top:
+          rect.top + window.screenY + (window.outerHeight - window.innerHeight),
+        left:
+          rect.left +
+          window.screenX +
+          (window.outerWidth - window.innerWidth) -
+          10
+      };
+    },
     openPane() {
       let url = this.$refs.url.value;
       let pane = this.$refs.pane;
       if (url == "") return;
-      let height = pane.scrollHeight - 75;
+      let height = pane.scrollHeight - 60;
       let width = pane.scrollWidth - (window.outerWidth - window.innerWidth);
       let left = this.offset(pane).left;
       let top = this.offset(pane).top;

@@ -49,9 +49,10 @@ export default {
           let pane = panes[i];
           let url = pane.getElementsByClassName("url")[0].value;
           if (url == "") continue;
-          let height = pane.scrollHeight - 75;
+          let height = pane.scrollHeight - 60;
           let width =
             pane.scrollWidth - (window.outerWidth - window.innerWidth);
+          let position = this.offset(pane)
           let left = this.offset(pane).left;
           let top = this.offset(pane).top;
           let args =
@@ -85,6 +86,31 @@ export default {
           10
       };
     },
+//   getPosition(el) {
+//     var xPos = 0;
+//     var yPos = 0;
+//    
+//     while (el) {
+//       if (el.tagName == "BODY") {
+//         // deal with browser quirks with body/window/document and page scroll
+//         var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+//         var yScroll = el.scrollTop || document.documentElement.scrollTop;
+//    
+//         xPos += (el.offsetLeft - xScroll + el.clientLeft);
+//         yPos += (el.offsetTop - yScroll + el.clientTop);
+//       } else {
+//         // for all other non-BODY elements
+//         xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+//         yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+//       }
+//    
+//       el = el.offsetParent;
+//     }
+//     return {
+//       x: xPos,
+//       y: yPos
+//     };
+// },
     getScrollbarWidth() {
       return window.innerWidth - document.clientWidth;
     }
@@ -98,7 +124,7 @@ export default {
 <style scoped>
 #navbar {
   /* background-color: greenyellow; */
-  height: 5%;
+  height: 60px;
   width: 100%;
   border-bottom: 1px solid black;
   color: black;
