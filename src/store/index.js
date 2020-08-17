@@ -16,6 +16,14 @@ export default new Vuex.Store({
         state.windows[i].close();
       }
       state.windows = [];
+    },
+    removeWindow(state, window) {
+      for (let i = 0; i < state.windows.length; i++) {
+        if (state.windows[i] == window) {
+          state.windows.splice(i, 1);
+          break
+        }
+      }
     }
   },
   actions: {

@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="{ gradient: playing }">
     <NavBar></NavBar>
-    <Main class="main"></Main>
+    <Main class="main" @windowClosed="update"></Main>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
     NavBar,
     Main
   },
+
   data() {
     return {
       playing: false
@@ -23,13 +24,24 @@ export default {
   computed: {
     paneNumber() {
       return Store.state.windows.length;
+    },
+
+    panes() {
+      return Store.state.windows
     }
+  },
+  methods: {
+
   },
   watch: {
     paneNumber() {
       if (this.paneNumber == 0) this.playing = false;
       else this.playing = true;
     }
+    // openPanes() {
+    //   if (this.openPanes == 0) this.playing = false;
+    //   else this.playing = true;
+    // }
   }
 };
 </script>

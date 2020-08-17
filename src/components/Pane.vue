@@ -31,20 +31,6 @@ export default {
     fill(e) {
       if (e.target.value == "") e.target.value = "https://www.";
     },
-    offset(el) {
-      var rect = el.getBoundingClientRect();
-      // scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-      // scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      return {
-        top:
-          rect.top + window.screenY + (window.outerHeight - window.innerHeight),
-        left:
-          rect.left +
-          window.screenX +
-          (window.outerWidth - window.innerWidth) -
-          10
-      };
-    },
     openPane() {
       let url = this.$refs.url.value;
       let pane = this.$refs.pane;
@@ -63,8 +49,31 @@ export default {
         ",top=" +
         top +
         ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
-      Store.commit("addWindow", window.open(url, url, args));
-    }
+      let newWin = window.open(url, url, args)
+
+      var vm = this
+      var loop = setInterval(function() {   
+          if(newWin.closed) {  
+              clearInterval(loop);  
+              Store.commit("removeWindow", newWin)
+          }  
+        }, 500);
+      Store.commit("addWindow", newWin);
+    },
+    offset(el) {
+      var rect = el.getBoundingClientRect();
+      // scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      // scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return {
+        top:
+          rect.top + window.screenY + (window.outerHeight - window.innerHeight),
+        left:
+          rect.left +
+          window.screenX +
+          (window.outerWidth - window.innerWidth) -
+          10
+      }
+    },
   }
 };
 </script>
