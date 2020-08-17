@@ -66,10 +66,12 @@ export default {
             top +
             ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
           Store.commit("addWindow", window.open(url, url, args));
+          this.$emit("update")
         }
       } else {
         this.$refs.timer.reset();
         Store.commit("closeWindows");
+        this.$emit("update")
       }
     },
     offset(el) {

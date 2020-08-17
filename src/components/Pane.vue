@@ -51,7 +51,6 @@ export default {
         ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
       let newWin = window.open(url, url, args)
 
-      var vm = this
       var loop = setInterval(function() {   
           if(newWin.closed) {  
               clearInterval(loop);  

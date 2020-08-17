@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="{ gradient: playing }">
-    <NavBar></NavBar>
-    <Main class="main" @windowClosed="update"></Main>
+    <NavBar @update="update"></NavBar>
+    <Main class="main" ></Main>
   </div>
 </template>
 
@@ -31,7 +31,10 @@ export default {
     }
   },
   methods: {
-
+    update() {
+      if (this.paneNumber == 0) this.playing = false;
+      else this.playing = true;
+    }
   },
   watch: {
     paneNumber() {
