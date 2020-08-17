@@ -91,6 +91,8 @@ export default {
   width: 100%;
   margin: 0px auto;
   cursor: pointer;
+  position: relative;
+  bottom: 50px;
   z-index: 100;
 }
 

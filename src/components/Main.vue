@@ -3,13 +3,15 @@
     <div class="container">
       <Pane v-for="i in windowNumber" :key="i" class="pane"></Pane>
     </div>
-    <b-button
-      variant="outline-dark"
-      @click="bringAllToFront"
-      class="bring-all-to-front"
-      >bring all to front</b-button
-    >
-    <span class="attribution">made by everett shen </span>
+    <div class="footer">
+      <b-button
+        variant="outline-dark"
+        @click="bringAllToFront"
+        class="bring-all-to-front"
+        ><b-icon-front class="icon"></b-icon-front> bring all to front</b-button
+      >
+      <span class="attribution">made by everett shen </span>
+    </div>
   </div>
 </template>
 
@@ -43,6 +45,7 @@ export default {
   width: 100%;
   height: 100%;
   max-width: none;
+  margin-bottom: 5px;
 }
 
 .pane {
@@ -53,24 +56,33 @@ export default {
 
 .main {
   /* display: flex; For some reason getting rid of this messes up the height */
-  flex-direction: column;
+
   width: 100%;
+  height: 100%;
   max-width: none;
 }
 
 .bring-all-to-front {
-  margin-left: 1%;
+  margin-left: calc(0.5% + 15px);
   font-family: "Roboto", sans-serif;
   font-weight: 800;
-  margin-top: 10px;
   color: black;
   border: 1px solid black;
 }
 
 .attribution {
   float: right;
-  margin-top: 10px;
-  margin-right: 1%;
+  margin-right: calc(0.5% + 15px);
   font-weight: 100;
+}
+.icon {
+  margin-left: -5px;
+  margin-right: 4px;
+}
+
+.footer {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
