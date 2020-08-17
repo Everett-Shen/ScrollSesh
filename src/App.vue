@@ -17,6 +17,7 @@ export default {
   },
   created() {
     window.addEventListener("resize", this.onResize);
+    window.addEventListener("beforeunload", this.closeWindows);
   },
   destroyed() {
     window.removeEventListener("resize", this.onResize);
@@ -24,6 +25,7 @@ export default {
   mounted() {
     this.onResize();
   },
+
   data() {
     return {
       playing: false,
@@ -45,6 +47,9 @@ export default {
     update() {
       if (this.paneNumber == 0) this.playing = false;
       else this.playing = true;
+    },
+    closeWindows() {
+      Store.commit("closeWindows");
     },
     onResize() {
       this.windowNumber = Math.floor(window.innerWidth / this.minWidth);

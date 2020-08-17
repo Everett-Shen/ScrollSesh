@@ -84,5 +84,6 @@ export default {
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
+  align-content: center;
 }
 </style>
