@@ -79,8 +79,8 @@ export default {
 
 <style scoped>
 .pane {
-  height: 97%;
   width: 100%;
+  height: 100%;
   /* margin: auto; */
   border: 1px solid black;
   position: relative;

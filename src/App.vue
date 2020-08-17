@@ -80,10 +80,11 @@ export default {
 html,
 body {
   font-family: "Roboto", sans-serif;
-  height: calc(100% - 60px);
+  height: calc(100%);
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 * {
   margin: 0;
@@ -99,7 +100,7 @@ body {
 
 .gradient {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
+  background-size: 500% 500%;
   animation: gradient 30s ease infinite;
 }
 

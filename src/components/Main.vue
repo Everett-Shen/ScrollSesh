@@ -50,16 +50,18 @@ export default {
 
 .pane {
   margin: 20px;
+  height: calc(97% - 20px);
   margin-left: 0.5%;
   margin-right: 0.5%;
 }
 
 .main {
   /* display: flex; For some reason getting rid of this messes up the height */
-
   width: 100%;
-  height: 100%;
+  height: calc(100% - 60px);
   max-width: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .bring-all-to-front {
@@ -81,9 +83,12 @@ export default {
 }
 
 .footer {
-  margin-top: 5px;
   display: flex;
+  height: 40px;
   justify-content: space-between;
   align-content: center;
+  position: relative;
+  bottom: 1.5%;
+  float: bottom;
 }
 </style>

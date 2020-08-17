@@ -163,6 +163,7 @@ export default {
   width: 150px;
   text-align: center;
   position: absolute;
+  top: 5px;
   left: 50%;
   margin-left: -90px;
 }
