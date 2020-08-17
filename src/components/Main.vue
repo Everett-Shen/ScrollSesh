@@ -1,11 +1,7 @@
 <template>
   <div class="main">
     <div class="container">
-      <Pane class="pane"></Pane>
-      <Pane class="pane"></Pane>
-      <Pane class="pane"></Pane>
-      <Pane class="pane"></Pane>
-      <Pane class="pane"></Pane>
+      <Pane v-for="i in windowNumber" :key="i" class="pane"></Pane>
     </div>
     <b-button
       variant="outline-dark"
@@ -24,6 +20,12 @@ export default {
   name: "Main",
   components: {
     Pane
+  },
+  props: {
+    windowNumber: {
+      type: Number,
+      default: 1
+    }
   },
   methods: {
     bringAllToFront() {

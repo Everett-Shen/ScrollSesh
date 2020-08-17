@@ -1,39 +1,54 @@
 <template>
   <div id="app" :class="{ gradient: playing }">
     <NavBar @update="update"></NavBar>
-    <Main class="main" ></Main>
+    <Main class="main" :windowNumber="windowNumber"></Main>
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
 import Main from "./components/Main";
-import Store from "./store/index"
+import Store from "./store/index";
 export default {
   name: "App",
   components: {
     NavBar,
     Main
   },
-
+  created() {
+    window.addEventListener("resize", this.onResize);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.onResize);
+  },
+  mounted() {
+    this.onResize();
+  },
   data() {
     return {
-      playing: false
+      playing: false,
+      windowNumber: 1
     };
   },
   computed: {
     paneNumber() {
       return Store.state.windows.length;
     },
-
+    minWidth() {
+      return Store.state.minWidth;
+    },
     panes() {
-      return Store.state.windows
+      return Store.state.windows;
     }
   },
   methods: {
     update() {
       if (this.paneNumber == 0) this.playing = false;
       else this.playing = true;
+    },
+    onResize() {
+      this.windowNumber = Math.floor(window.innerWidth / this.minWidth);
+      if (this.windowNumber == 0) this.windowNumber = 1;
     }
   },
   watch: {
@@ -41,6 +56,7 @@ export default {
       if (this.paneNumber == 0) this.playing = false;
       else this.playing = true;
     }
+
     // openPanes() {
     //   if (this.openPanes == 0) this.playing = false;
     //   else this.playing = true;

@@ -49,14 +49,14 @@ export default {
         ",top=" +
         top +
         ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
-      let newWin = window.open(url, url, args)
+      let newWin = window.open(url, url, args);
 
-      var loop = setInterval(function() {   
-          if(newWin.closed) {  
-              clearInterval(loop);  
-              Store.commit("removeWindow", newWin)
-          }  
-        }, 500);
+      var loop = setInterval(function() {
+        if (newWin.closed) {
+          clearInterval(loop);
+          Store.commit("removeWindow", newWin);
+        }
+      }, 500);
       Store.commit("addWindow", newWin);
     },
     offset(el) {
@@ -71,8 +71,8 @@ export default {
           window.screenX +
           (window.outerWidth - window.innerWidth) -
           10
-      }
-    },
+      };
+    }
   }
 };
 </script>
@@ -80,7 +80,7 @@ export default {
 <style scoped>
 .pane {
   height: 97%;
-  width: 19%;
+  width: 100%;
   /* margin: auto; */
   border: 1px solid black;
   position: relative;

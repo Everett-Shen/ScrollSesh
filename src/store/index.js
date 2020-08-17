@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    windows: []
+    windows: [],
+    minWidth: 450
   },
   mutations: {
     addWindow(state, val) {
@@ -21,7 +22,7 @@ export default new Vuex.Store({
       for (let i = 0; i < state.windows.length; i++) {
         if (state.windows[i] == window) {
           state.windows.splice(i, 1);
-          break
+          break;
         }
       }
     }

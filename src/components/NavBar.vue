@@ -52,7 +52,6 @@ export default {
           let height = pane.scrollHeight - 60;
           let width =
             pane.scrollWidth - (window.outerWidth - window.innerWidth);
-          let position = this.offset(pane)
           let left = this.offset(pane).left;
           let top = this.offset(pane).top;
           let args =
@@ -66,12 +65,12 @@ export default {
             top +
             ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
           Store.commit("addWindow", window.open(url, url, args));
-          this.$emit("update")
+          this.$emit("update");
         }
       } else {
         this.$refs.timer.reset();
         Store.commit("closeWindows");
-        this.$emit("update")
+        this.$emit("update");
       }
     },
     offset(el) {
@@ -88,31 +87,31 @@ export default {
           10
       };
     },
-//   getPosition(el) {
-//     var xPos = 0;
-//     var yPos = 0;
-//    
-//     while (el) {
-//       if (el.tagName == "BODY") {
-//         // deal with browser quirks with body/window/document and page scroll
-//         var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-//         var yScroll = el.scrollTop || document.documentElement.scrollTop;
-//    
-//         xPos += (el.offsetLeft - xScroll + el.clientLeft);
-//         yPos += (el.offsetTop - yScroll + el.clientTop);
-//       } else {
-//         // for all other non-BODY elements
-//         xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-//         yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-//       }
-//    
-//       el = el.offsetParent;
-//     }
-//     return {
-//       x: xPos,
-//       y: yPos
-//     };
-// },
+    //   getPosition(el) {
+    //     var xPos = 0;
+    //     var yPos = 0;
+    //
+    //     while (el) {
+    //       if (el.tagName == "BODY") {
+    //         // deal with browser quirks with body/window/document and page scroll
+    //         var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+    //         var yScroll = el.scrollTop || document.documentElement.scrollTop;
+    //
+    //         xPos += (el.offsetLeft - xScroll + el.clientLeft);
+    //         yPos += (el.offsetTop - yScroll + el.clientTop);
+    //       } else {
+    //         // for all other non-BODY elements
+    //         xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+    //         yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+    //       }
+    //
+    //       el = el.offsetParent;
+    //     }
+    //     return {
+    //       x: xPos,
+    //       y: yPos
+    //     };
+    // },
     getScrollbarWidth() {
       return window.innerWidth - document.clientWidth;
     }
