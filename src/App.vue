@@ -230,6 +230,17 @@ input {
   background-color: transparent;
 }
 
+  ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 5px;
+      border: none
+  }
+  ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #e6e6e6;
+
+  }
+  
 .overlay {
   position: absolute;
   height: 100%;
