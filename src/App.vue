@@ -12,7 +12,7 @@
       <Main class="main" :windowNumber="windowNumber"></Main>
 
       <template v-slot:overlay>
-        <div ref="dialog" class="text-center p-3">
+        <div ref="dialog" class="text-center p-3" :style="infoStyle">
           <h1><strong>scrollsesh</strong></h1>
 
           <p>
@@ -24,8 +24,7 @@
           </p>
           <br />
           <div class="how-to-use">
-            <h3 style="float: left">how to use</h3>
-            <br />
+            <h3>how to use</h3>
             <ol style="float: left; margin-left: 15px">
               <li style="float: left">
                 Open the desired number of browsing windows (panes) by clicking
@@ -55,7 +54,7 @@
           </div>
 
           <div class="how-to-use">
-            <h3 style="text-align: right">notes</h3>
+            <h3>notes</h3>
 
             <ul style="float: left; margin-left: 15px">
               <li style="float: left">
@@ -70,6 +69,13 @@
               <br />
               <li style="float: left">
                 Scrollsesh is best suited for browsing on desktop monitors
+              </li>
+              <br /><br />
+              <li style="float: left">
+                Gradient animation by
+                <a href="https://manuelpinto.in/" target="_blank">
+                  Manuel Pinto</a
+                >
               </li>
             </ul>
           </div>
@@ -142,6 +148,9 @@ export default {
     },
     panes() {
       return Store.state.windows;
+    },
+    infoStyle() {
+      return "overflow: auto; height: " + window.innerHeight * 0.7 + "px";
     }
   },
   methods: {
@@ -229,7 +238,7 @@ input {
 }
 
 .how-to-use {
-  width: 800px;
+  width: 700px;
   text-align: left;
   display: inline-block;
   padding: 5px;
