@@ -2,22 +2,28 @@
   <div id="navbar">
     <p id="logo">scrollsesh!</p>
     <Timer class="timer" ref="timer" @timeUp="toggleTimer"></Timer>
-    <b-button
-      v-show="!isTiming"
-      variant="outline-dark"
-      class="start-button"
-      @click="toggleTimer"
-    >
-      <b-icon-play-fill class="icon"></b-icon-play-fill>
-      start</b-button
-    >
-    <b-button
-      v-show="isTiming"
-      variant="outline-danger"
-      class="start-button end-button"
-      @click="toggleTimer"
-      ><b-icon-stop-fill class="icon"></b-icon-stop-fill> End</b-button
-    >
+    <div>
+      <b-icon-question-circle
+        class="help"
+        @click="$emit('help')"
+      ></b-icon-question-circle>
+      <b-button
+        v-show="!isTiming"
+        variant="outline-dark"
+        class="start-button"
+        @click="toggleTimer"
+      >
+        <b-icon-play-fill class="icon"></b-icon-play-fill>
+        start</b-button
+      >
+      <b-button
+        v-show="isTiming"
+        variant="outline-danger"
+        class="start-button end-button"
+        @click="toggleTimer"
+        ><b-icon-stop-fill class="icon"></b-icon-stop-fill> End</b-button
+      >
+    </div>
   </div>
 </template>
 
@@ -87,31 +93,7 @@ export default {
           10
       };
     },
-    //   getPosition(el) {
-    //     var xPos = 0;
-    //     var yPos = 0;
-    //
-    //     while (el) {
-    //       if (el.tagName == "BODY") {
-    //         // deal with browser quirks with body/window/document and page scroll
-    //         var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-    //         var yScroll = el.scrollTop || document.documentElement.scrollTop;
-    //
-    //         xPos += (el.offsetLeft - xScroll + el.clientLeft);
-    //         yPos += (el.offsetTop - yScroll + el.clientTop);
-    //       } else {
-    //         // for all other non-BODY elements
-    //         xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-    //         yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-    //       }
-    //
-    //       el = el.offsetParent;
-    //     }
-    //     return {
-    //       x: xPos,
-    //       y: yPos
-    //     };
-    // },
+
     getScrollbarWidth() {
       return window.innerWidth - document.clientWidth;
     }
@@ -170,5 +152,13 @@ export default {
 
 .icon {
   margin-left: -5px;
+}
+
+.help {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 </style>

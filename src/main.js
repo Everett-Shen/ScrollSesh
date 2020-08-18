@@ -5,7 +5,10 @@ import {
   BootstrapVue,
   BIconPlayFill,
   BIconStopFill,
-  BIconFront
+  BIconFront,
+  BIconX,
+  BIconQuestionCircle,
+  BOverlay
 } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -16,6 +19,9 @@ Vue.use(BootstrapVue);
 Vue.component("BIconPlayFill", BIconPlayFill);
 Vue.component("BIconStopFill", BIconStopFill);
 Vue.component("BIconFront", BIconFront);
+Vue.component("BIconX", BIconX);
+Vue.component("BIconQuestionCircle", BIconQuestionCircle);
+Vue.component("b-overlay", BOverlay);
 
 new Vue({
   store,

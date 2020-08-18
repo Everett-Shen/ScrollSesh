@@ -1,7 +1,106 @@
 <template>
   <div id="app" :class="{ gradient: playing }">
-    <NavBar @update="update"></NavBar>
-    <Main class="main" :windowNumber="windowNumber"></Main>
+    <b-overlay :show="showInfo" class="overlay" :blur="blur">
+      <img
+        class="exit"
+        v-show="showInfo"
+        @click="showInfo = false"
+        src="@/assets/plus2.svg"
+        @keyup.esc="showInfo = false"
+      />
+      <NavBar @update="update" @help="showInfo = true"></NavBar>
+      <Main class="main" :windowNumber="windowNumber"></Main>
+
+      <template v-slot:overlay>
+        <div ref="dialog" class="text-center p-3">
+          <h1><strong>scrollsesh</strong></h1>
+
+          <p>
+            ver. 1.0<br />
+            developed by
+            <a href="https://github.com/Everett-Shen" target="_blank">
+              everett shen</a
+            >
+          </p>
+          <br />
+          <div class="how-to-use">
+            <h3 style="float: left">how to use</h3>
+            <br />
+            <ol style="float: left; margin-left: 15px">
+              <li style="float: left">
+                Open the desired number of browsing windows (panes) by clicking
+                on the plus signs
+              </li>
+              <br />
+              <li style="float: left">
+                Type in the URLs of the sites you wish to browse
+              </li>
+              <br />
+              <li style="float: left">
+                Determine how long you want your session to be by adjusting the
+                timer on the top
+              </li>
+              <br />
+              <li style="float: left">
+                Press "start" on the top right to begin your session. All panes
+                will automatically be closed when you close Scrollsesh, or if
+                the time runs out.
+              </li>
+              <br />
+              <li style="float: left">
+                If your panes get hidden by other windows, click “bring all to
+                front” to bring them back into view
+              </li>
+            </ol>
+          </div>
+
+          <div class="how-to-use">
+            <h3 style="text-align: right">notes</h3>
+
+            <ul style="float: left; margin-left: 15px">
+              <li style="float: left">
+                Scrollsesh adapts to the size of your display and automatically
+                determines the optimal number of panes for your screen
+              </li>
+              <br />
+              <li style="float: left">
+                To open additional panes during your session, type in a URL and
+                hit enter
+              </li>
+              <br />
+              <li style="float: left">
+                Scrollsesh is best suited for browsing on desktop monitors
+              </li>
+            </ul>
+          </div>
+
+          <div class="how-to-use">
+            <h3>why scrollsesh?</h3>
+            <p>
+              Scrollsesh was created with the belief that limits are necessary,
+              empowering users to consume social media in a controlled and
+              conscious manner. By splitting your browsing into timed sessions
+              and providing multiple panes to jump back and forth from,
+              Scrollsesh allows you to remain conscious of the world outside
+              your social media, controlling your content instead of the other
+              way around. Scrollsesh brings together the best of both worlds,
+              combining the larger display of desktop with the simplicity and
+              design of mobile sites, simulating the experience of browsing on
+              multiple phones at the same time while protecting your eyes.
+            </p>
+          </div>
+          <br /><br />
+          <p>
+            <em>&ldquo;a better way to browse social media. period&rdquo;</em>
+          </p>
+          <!-- <div class="d-flex">
+            <b-button variant="outline-danger" class="mr-3" @click="onCancel">
+              close
+            </b-button>
+          </div> -->
+        </div>
+      </template>
+    </b-overlay>
   </div>
 </template>
 
@@ -29,7 +128,9 @@ export default {
   data() {
     return {
       playing: false,
-      windowNumber: 1
+      windowNumber: 1,
+      showInfo: true,
+      blur: "1px"
     };
   },
   computed: {
@@ -118,5 +219,30 @@ body {
 
 input {
   background-color: transparent;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.how-to-use {
+  width: 800px;
+  text-align: left;
+  display: inline-block;
+  padding: 5px;
+}
+
+.exit {
+  position: absolute;
+  right: 2px;
+  width: 120px;
+  height: 120px;
+  top: 2px;
+  z-index: 2000;
+  cursor: pointer;
+  transform: rotate(45deg);
 }
 </style>

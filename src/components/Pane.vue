@@ -93,7 +93,6 @@ export default {
   cursor: pointer;
   position: relative;
   bottom: 50px;
-  z-index: 100;
 }
 
 .label {
@@ -124,7 +123,7 @@ export default {
   position: absolute;
   top: 40%;
   left: 50%;
-  z-index: 10000;
+
   transform: translateX(-50%);
 }
 
