@@ -13,103 +13,106 @@
 
       <template v-slot:overlay>
         <div ref="dialog" class="text-center p-3" :style="infoStyle">
-          <h1><strong>scrollsesh</strong></h1>
+          <div class="content">
+            <h1><strong>scrollsesh</strong></h1>
 
-          <p>
-            ver. 1.0<br />
-            developed by
-            <a href="https://github.com/Everett-Shen" target="_blank">
-              everett shen</a
-            >
-          </p>
-          <br />
-          <div class="how-to-use">
-            <h3>how to use</h3>
-            <ol style="float: left; margin-left: 15px">
-              <li style="float: left">
-                Open the desired number of browsing windows (panes) by clicking
-                on the plus signs
-              </li>
-              <br />
-              <li style="float: left">
-                Type in the URLs of the sites you wish to browse
-              </li>
-              <br />
-              <li style="float: left">
-                Determine how long you want your session to be by adjusting the
-                timer on the top
-              </li>
-              <br />
-              <li style="float: left">
-                Press "start" on the top right to begin your session. All panes
-                will automatically be closed when you close Scrollsesh, or if
-                the time runs out.
-              </li>
-              <br />
-              <li style="float: left">
-                If your panes get hidden by other windows, click “bring all to
-                front” to bring them back into view
-              </li>
-            </ol>
-          </div>
-
-          <div class="how-to-use">
-            <h3>notes</h3>
-
-            <ul style="float: left; margin-left: 15px">
-              <li style="float: left">
-                Scrollsesh adapts to the size of your display and automatically
-                determines the optimal number of panes for your screen
-              </li>
-              <br />
-              <li style="float: left">
-                To open additional panes during your session, type in a URL and
-                hit enter
-              </li>
-              <br />
-              <li style="float: left">
-                Scrollsesh is best suited for browsing mobile sites on desktop
-                monitors
-              </li>
-              <br /><br />
-              <li style="float: left">
-                Gradient animation by
-                <a href="https://manuelpinto.in/" target="_blank">
-                  Manuel Pinto</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="how-to-use">
-            <h3>why scrollsesh?</h3>
             <p>
-              Today’s social media platforms are designed to get users hooked,
-              to occupy every moment of our free time and yet still leave us
-              depressed and dissatisfied if unchecked. Scrollsesh was created
-              with the belief that limits are necessary, empowering users to
-              consume social media in a controlled and conscious manner. By
-              splitting your browsing into timed sessions and providing multiple
-              panes to jump back and forth from, Scrollsesh allows you to remain
-              conscious of the world outside your social media, controlling your
-              content instead of the other way around. Scrollsesh brings
-              together the best of both worlds, combining the larger display of
-              desktop with the simplicity and design of mobile sites, simulating
-              the experience of browsing on multiple phones at the same time
-              while protecting your eyes.
+              ver. 1.0<br />
+              developed by
+              <a href="https://github.com/Everett-Shen" target="_blank">
+                everett shen</a
+              >
             </p>
-          </div>
-          <br /><br /><br />
-          <p>
-            <em style="float: right"
-              >&ldquo;a better way to browse social media. period&rdquo;</em
-            >
-          </p>
-          <!-- <div class="d-flex">
+            <br />
+            <div class="how-to-use">
+              <h3>how to use</h3>
+              <ol style="float: left; margin-left: 15px">
+                <li style="float: left">
+                  Open the desired number of browsing windows (panes) by
+                  clicking on the plus signs
+                </li>
+                <br />
+                <li style="float: left">
+                  Type in the URLs of the sites you wish to browse
+                </li>
+                <br />
+                <li style="float: left">
+                  Determine how long you want your session to be by adjusting
+                  the timer on the top
+                </li>
+                <br />
+                <li style="float: left">
+                  Press "start" on the top right to begin your session. All
+                  panes will automatically be closed when you close Scrollsesh,
+                  or if the time runs out.
+                </li>
+                <br />
+                <li style="float: left">
+                  If your panes get hidden by other windows, click “bring all to
+                  front” to bring them back into view
+                </li>
+              </ol>
+            </div>
+
+            <div class="how-to-use">
+              <h3>notes</h3>
+
+              <ul style="float: left; margin-left: 15px">
+                <li style="float: left">
+                  Scrollsesh adapts to the size of your display and
+                  automatically determines the optimal number of panes for your
+                  screen
+                </li>
+                <br />
+                <li style="float: left">
+                  To open additional panes during your session, type in a URL
+                  and hit enter
+                </li>
+                <br />
+                <li style="float: left">
+                  Scrollsesh is best suited for browsing mobile sites on desktop
+                  monitors
+                </li>
+                <br /><br />
+                <li style="float: left">
+                  Gradient animation by
+                  <a href="https://manuelpinto.in/" target="_blank">
+                    Manuel Pinto</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="how-to-use">
+              <h3>why scrollsesh?</h3>
+              <p>
+                Today’s social media platforms are designed to get users hooked,
+                to occupy every moment of our free time and yet still leave us
+                depressed and dissatisfied if unchecked. Scrollsesh was created
+                with the belief that limits are necessary, empowering users to
+                consume social media in a controlled and conscious manner. By
+                splitting your browsing into timed sessions and providing
+                multiple panes to jump back and forth from, Scrollsesh allows
+                you to remain conscious of the world outside your social media,
+                controlling your content instead of the other way around.
+                Scrollsesh brings together the best of both worlds, combining
+                the larger display of desktop with the simplicity and design of
+                mobile sites, simulating the experience of browsing on multiple
+                phones at the same time while protecting your eyes.
+              </p>
+            </div>
+            <br /><br /><br />
+            <p>
+              <em style="float: right"
+                >&ldquo;a better way to browse social media. period&rdquo;</em
+              >
+            </p>
+            <!-- <div class="d-flex">
             <b-button variant="outline-danger" class="mr-3" @click="onCancel">
               close
             </b-button>
           </div> -->
+          </div>
         </div>
       </template>
     </b-overlay>
@@ -158,8 +161,8 @@ export default {
     infoStyle() {
       return (
         "overflow: auto; height: " +
-        window.innerHeight * 0.7 +
-        "px; width: 100%"
+        window.innerHeight * 0.8 +
+        "px; width: 100%; "
         // "px; width: " +
         // width * 0.8 +
         // "px"
@@ -279,5 +282,11 @@ input {
   z-index: 2000;
   cursor: pointer;
   transform: rotate(45deg);
+}
+
+.content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 </style>
