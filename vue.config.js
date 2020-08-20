@@ -3,5 +3,6 @@ module.exports = {
     devtool: "source-map"
   },
   mode: "production",
-  productionSourceMap: false
+  productionSourceMap: false,
+  publicPath: process.env.NODE_ENV === "production" ? "/ScrollSesh/" : "/"
 };
