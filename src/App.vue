@@ -157,9 +157,10 @@ export default {
       return (
         "overflow: auto; height: " +
         window.innerHeight * 0.7 +
-        "px; width: " +
-        window.innerWidth * 0.8 +
-        "px"
+        "px; width: 100%"
+        // "px; width: " +
+        // width * 0.8 +
+        // "px"
       );
     }
   },
@@ -259,7 +260,8 @@ input {
 }
 
 .how-to-use {
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
   text-align: left;
   display: block;
   padding: 5px;
