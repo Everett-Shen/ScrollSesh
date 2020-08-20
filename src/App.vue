@@ -161,7 +161,7 @@ export default {
     infoStyle() {
       return (
         "overflow: auto; height: " +
-        window.innerHeight * 0.8 +
+        window.innerHeight * 0.75 +
         "px; width: 100%; "
         // "px; width: " +
         // width * 0.8 +
@@ -286,7 +286,5 @@ input {
 
 .content {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 </style>
