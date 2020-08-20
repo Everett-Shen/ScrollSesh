@@ -33,7 +33,7 @@ export default {
   name: "TimerSetup",
   data() {
     return {
-      minutes: 10,
+      minutes: 0,
       secondes: 0,
       showInput: false
     };
