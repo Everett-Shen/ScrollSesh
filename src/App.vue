@@ -65,13 +65,17 @@
                 </li>
                 <br />
                 <li style="float: left">
-                  To open additional panes during your session, type in a URL
-                  and hit enter
+                  Popups need to be enabled to use Scrollsesh
                 </li>
                 <br />
                 <li style="float: left">
                   Scrollsesh is best suited for browsing mobile sites on desktop
                   PCs
+                </li>
+                <br />
+                <li style="float: left">
+                  To open additional panes during your session, type in a URL
+                  and hit enter
                 </li>
                 <br /><br />
                 <li style="float: left">
