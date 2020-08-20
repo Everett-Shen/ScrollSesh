@@ -86,15 +86,6 @@ export default {
   position: relative;
 }
 
-.plus {
-  height: 100%;
-  width: 100%;
-  margin: 0px auto;
-  cursor: pointer;
-  position: relative;
-  bottom: 50px;
-}
-
 .label {
   font-size: 2em;
   width: 100%;
@@ -117,11 +108,19 @@ export default {
   outline: none;
 }
 
+.plus {
+  height: 100%;
+  width: 100%;
+  margin: 0px auto;
+  cursor: pointer;
+  position: relative;
+}
+
 .before-clicked {
-  width: 40%;
-  width: 40%;
+  width: 300px;
+  height: 300px;
   position: absolute;
-  top: 40%;
+  top: calc(50% - 150px);
   left: 50%;
 
   transform: translateX(-50%);
