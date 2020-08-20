@@ -68,7 +68,8 @@
               </li>
               <br />
               <li style="float: left">
-                Scrollsesh is best suited for browsing on desktop monitors
+                Scrollsesh is best suited for browsing mobile sites on desktop
+                monitors
               </li>
               <br /><br />
               <li style="float: left">
@@ -83,16 +84,19 @@
           <div class="how-to-use">
             <h3>why scrollsesh?</h3>
             <p>
-              Scrollsesh was created with the belief that limits are necessary,
-              empowering users to consume social media in a controlled and
-              conscious manner. By splitting your browsing into timed sessions
-              and providing multiple panes to jump back and forth from,
-              Scrollsesh allows you to remain conscious of the world outside
-              your social media, controlling your content instead of the other
-              way around. Scrollsesh brings together the best of both worlds,
-              combining the larger display of desktop with the simplicity and
-              design of mobile sites, simulating the experience of browsing on
-              multiple phones at the same time while protecting your eyes.
+              Today’s social media platforms are designed to get users hooked,
+              to occupy every moment of our free time and yet still leave us
+              depressed and dissatisfied if unchecked. Scrollsesh was created
+              with the belief that limits are necessary, empowering users to
+              consume social media in a controlled and conscious manner. By
+              splitting your browsing into timed sessions and providing multiple
+              panes to jump back and forth from, Scrollsesh allows you to remain
+              conscious of the world outside your social media, controlling your
+              content instead of the other way around. Scrollsesh brings
+              together the best of both worlds, combining the larger display of
+              desktop with the simplicity and design of mobile sites, simulating
+              the experience of browsing on multiple phones at the same time
+              while protecting your eyes.
             </p>
           </div>
           <br /><br />
@@ -230,17 +234,16 @@ input {
   background-color: transparent;
 }
 
-  ::-webkit-scrollbar {
-      -webkit-appearance: none;
-      width: 5px;
-      border: none
-  }
-  ::-webkit-scrollbar-thumb {
-      border-radius: 4px;
-      background-color: #e6e6e6;
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
+  border: none;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #e6e6e6;
+}
 
-  }
-  
 .overlay {
   position: absolute;
   height: 100%;
