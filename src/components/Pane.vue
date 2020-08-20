@@ -117,8 +117,8 @@ export default {
 }
 
 .before-clicked {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   top: calc(50% - 150px);
   left: 50%;

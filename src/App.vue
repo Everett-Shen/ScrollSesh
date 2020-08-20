@@ -154,7 +154,13 @@ export default {
       return Store.state.windows;
     },
     infoStyle() {
-      return "overflow: auto; height: " + window.innerHeight * 0.7 + "px";
+      return (
+        "overflow: auto; height: " +
+        window.innerHeight * 0.7 +
+        "px; width: " +
+        window.innerWidth * 0.4 +
+        "px"
+      );
     }
   },
   methods: {
@@ -237,6 +243,7 @@ input {
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 5px;
+  height: 5px;
   border: none;
 }
 ::-webkit-scrollbar-thumb {
