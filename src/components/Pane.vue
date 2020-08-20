@@ -120,7 +120,7 @@ export default {
   width: 200px;
   height: 200px;
   position: absolute;
-  top: calc(50% - 150px);
+  top: calc(50% - 100px);
   left: 50%;
 
   transform: translateX(-50%);
