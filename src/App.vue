@@ -99,9 +99,11 @@
               while protecting your eyes.
             </p>
           </div>
-          <br /><br />
+          <br /><br /><br />
           <p>
-            <em>&ldquo;a better way to browse social media. period&rdquo;</em>
+            <em style="float: right"
+              >&ldquo;a better way to browse social media. period&rdquo;</em
+            >
           </p>
           <!-- <div class="d-flex">
             <b-button variant="outline-danger" class="mr-3" @click="onCancel">
