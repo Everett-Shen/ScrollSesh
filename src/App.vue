@@ -71,7 +71,7 @@
                 <br />
                 <li style="float: left">
                   Scrollsesh is best suited for browsing mobile sites on desktop
-                  monitors
+                  PCs
                 </li>
                 <br /><br />
                 <li style="float: left">
