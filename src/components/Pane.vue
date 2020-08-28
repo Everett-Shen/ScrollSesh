@@ -49,7 +49,8 @@ export default {
         ",top=" +
         top +
         ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
-      let newWin = window.open(url, url, args);
+      let name = Store.state.windows.length;
+      let newWin = window.open(url, name, args);
 
       var loop = setInterval(function() {
         if (newWin.closed) {

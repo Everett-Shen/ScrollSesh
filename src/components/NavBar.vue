@@ -70,7 +70,8 @@ export default {
             ",top=" +
             top +
             ",resizable=no, toolbar=no,menubar=no,location=no,directories=no,status=no,titlebar=no";
-          Store.commit("addWindow", window.open(url, url, args));
+          let name = Store.state.windows.length;
+          Store.commit("addWindow", window.open(url, name, args));
           this.$emit("update");
         }
       } else {
